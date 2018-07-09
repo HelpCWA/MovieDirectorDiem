@@ -11,7 +11,12 @@
     Title: <input type="text" th:field="*{title}" /> <br/>
     Year: <input type="number" th:field="*{year}" /> <br/>
     Description: <textarea row="3" th:field="*{description}" /> <br/>
+    Director:
+
     <input type="submit" value="Submit" />
+    <select th:field="*{director}">
+        <option th:each="aDirector:${directors}" th:value="${aDirector.id}" th:text="${aDirector.name}"></option>
+    </select>
 </form>
 
 </body>
